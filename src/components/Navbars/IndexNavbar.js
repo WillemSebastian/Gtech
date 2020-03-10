@@ -10,6 +10,7 @@ import {
   Container,
   UncontrolledTooltip
 } from "reactstrap";
+import { Link } from "react-router-dom";
 
 function IndexNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
@@ -72,25 +73,25 @@ function IndexNavbar() {
           >
             <Nav navbar>
               <NavItem>
-                <NavLink href="/index" target="/index" id="twitter-tooltip">
+                <Link to="/index" target="/index" id="twitter-tooltip">
                   <p>Home</p>
-                </NavLink>
+                </Link>
                 <UncontrolledTooltip target="#twitter-tooltip">
                   Follow us on Twitter
                 </UncontrolledTooltip>
               </NavItem>
               <NavItem>
-                <NavLink href="/cart-page" target="_blank" id="twitter-tooltip">
+                <Link to="/cart-page" target="_blank" id="twitter-tooltip">
                   <p>Cart</p>
-                </NavLink>
+                </Link>
                 <UncontrolledTooltip target="#twitter-tooltip">
                   Follow us on Twitter
                 </UncontrolledTooltip>
               </NavItem>
               <NavItem>
-                <NavLink href="login-page" target="_blank" id="twitter-tooltip">
+                <Link to="login-page" target="_blank" id="twitter-tooltip">
                   <p>Login</p>
-                </NavLink>
+                </Link>
                 <UncontrolledTooltip target="#twitter-tooltip">
                   Follow us on Twitter
                 </UncontrolledTooltip>
