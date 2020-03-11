@@ -5,7 +5,7 @@ import { Container, Row, Col } from "reactstrap";
 
 // core components
 
-function CompleteExamples(props) {
+function SegmentTitle(props) {
   return (
     <>
       <div className="section">
@@ -21,4 +21,4 @@ function CompleteExamples(props) {
   );
 }
 
-export default CompleteExamples;
+export default SegmentTitle;

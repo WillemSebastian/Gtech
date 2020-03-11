@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
-import university from "./university";
+import shop from "./shop";
+import cart from "./cart";
 
-export default combineReducers({ university });
+export default combineReducers({ shop, cart });

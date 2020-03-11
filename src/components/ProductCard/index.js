@@ -10,6 +10,8 @@ import CardActions from "@material-ui/core/CardActions";
 import Typography from "@material-ui/core/Typography";
 import { Button, Container, Row, Col } from "reactstrap";
 // core components
+import { useDispatch } from "react-redux";
+import { addToCart } from "redux/actions/cart";
 
 const useStyles = makeStyles({
   root: {
@@ -20,9 +22,8 @@ const useStyles = makeStyles({
   }
 });
 
-function AddToCart() {}
-
 function ProductCard(props) {
+  const dispatch = useDispatch();
   const [count, setCounter] = React.useState(0);
   const classes = useStyles();
   return (
@@ -40,13 +41,18 @@ function ProductCard(props) {
                 {props.data.title}
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
+                {props.data.detail}
               </Typography>
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary">
+            <Button
+              size="small"
+              color="primary"
+              onClick={() =>
+                dispatch(addToCart({ product: props.data, count: count }))
+              }
+            >
               Add To Cart
             </Button>
             <div

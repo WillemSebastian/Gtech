@@ -10,12 +10,13 @@ import IndexHeader from "components/Headers/IndexHeader.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
 // sections for this page
-import CompleteExamples from "./index-sections/CompleteExamples.js";
 import Product from "./index-sections/Product.js";
-import Examples from "./index-sections/Examples.js";
-import Download from "./index-sections/Download.js";
+import SegmentTitle from "./index-sections/SegmentTitle.js";
+import { getClothes } from "../redux/actions/shop";
+import { useDispatch } from "react-redux";
 
 function Index() {
+  const dispatch = useDispatch();
   React.useEffect(() => {
     document.body.classList.add("index-page");
     document.body.classList.add("sidebar-collapse");
@@ -27,17 +28,17 @@ function Index() {
       document.body.classList.remove("sidebar-collapse");
     };
   });
+  dispatch(getClothes());
   return (
     <>
       <IndexNavbar />
       <div className="wrapper">
         <IndexHeader />
         <div className="main">
-          <CompleteExamples text="Latest Product" />
-          <Product />
-          <CompleteExamples text="Favourite" />
-          <Product />
-          <Download />
+          <SegmentTitle text="Latest Product" />
+          <Product text="Latest Product" />
+          <SegmentTitle text="Favourite" />
+          <Product text="Favourite" />
         </div>
         <DarkFooter />
       </div>

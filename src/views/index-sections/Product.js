@@ -1,18 +1,20 @@
 import React from "react";
 import ProductCard from "../../components/ProductCard";
-import { mockResult } from "../../helpers/api";
 
 // reactstrap components
-import { Button, Container, Row, Col } from "reactstrap";
+import { Container, Row } from "reactstrap";
+import { useSelector } from "react-redux";
 // core components
 
-function renderProductCard() {
-  return mockResult.data[0].newProducts.map(x => {
-    return <ProductCard data={x} />;
+function renderProductCard(products) {
+  return products.map(x => {
+    return <ProductCard data={x} key={x.title} />;
   });
 }
 
-function Product() {
+function Product(props) {
+  const newProducts = useSelector(state => state.shop.newProducts);
+  const favouriteProduct = useSelector(state => state.shop.favourites);
   return (
     <>
       <div
@@ -24,7 +26,11 @@ function Product() {
         }}
       >
         <Container>
-          <Row>{renderProductCard()}</Row>
+          <Row>
+            {props.text === "Latest Product"
+              ? renderProductCard(newProducts)
+              : renderProductCard(favouriteProduct)}
+          </Row>
         </Container>
       </div>
     </>

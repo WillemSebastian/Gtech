@@ -26,10 +26,10 @@ import "assets/demo/demo.css";
 import "assets/demo/nucleo-icons-page-styles.css";
 // pages for this kit
 import Index from "views/Index.js";
-import LoginPage from "views/examples/LoginPage.js";
+import LoginPage from "views/containers/LoginPage.js";
 import { Provider } from "react-redux";
 import store from "./redux/store";
-import CartPage from "views/examples/CartPage";
+import CartPage from "views/containers/CartPage";
 
 ReactDOM.render(
   <Provider store={store}>

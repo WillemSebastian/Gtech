@@ -8,7 +8,8 @@ import {
   NavLink,
   Nav,
   Container,
-  UncontrolledTooltip
+  UncontrolledTooltip,
+  Button
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
@@ -72,30 +73,45 @@ function IndexNavbar() {
             navbar
           >
             <Nav navbar>
-              <NavItem>
-                <Link to="/index" target="/index" id="twitter-tooltip">
-                  <p>Home</p>
-                </Link>
-                <UncontrolledTooltip target="#twitter-tooltip">
-                  Follow us on Twitter
-                </UncontrolledTooltip>
-              </NavItem>
-              <NavItem>
-                <Link to="/cart-page" target="_blank" id="twitter-tooltip">
-                  <p>Cart</p>
-                </Link>
-                <UncontrolledTooltip target="#twitter-tooltip">
-                  Follow us on Twitter
-                </UncontrolledTooltip>
-              </NavItem>
-              <NavItem>
-                <Link to="login-page" target="_blank" id="twitter-tooltip">
-                  <p>Login</p>
-                </Link>
-                <UncontrolledTooltip target="#twitter-tooltip">
-                  Follow us on Twitter
-                </UncontrolledTooltip>
-              </NavItem>
+              <Button
+                style={{
+                  backgroundColor: "transparent",
+                  margin: 0,
+                  padding: 10,
+                  fontSize: 15
+                }}
+                color="transparant"
+                to="/index"
+                tag={Link}
+              >
+                Home
+              </Button>
+              <Button
+                style={{
+                  backgroundColor: "transparent",
+                  margin: 0,
+                  padding: 10,
+                  fontSize: 15
+                }}
+                color="transparant"
+                to="/cart-page"
+                tag={Link}
+              >
+                Cart
+              </Button>
+              <Button
+                style={{
+                  backgroundColor: "transparent",
+                  margin: 0,
+                  padding: 10,
+                  fontSize: 15
+                }}
+                color="white"
+                to="/login-page"
+                tag={Link}
+              >
+                Login
+              </Button>
               <NavItem>
                 <NavLink
                   href="#pablo"
